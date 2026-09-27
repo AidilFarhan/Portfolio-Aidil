@@ -641,6 +641,152 @@
       transform: translateX(4px);
     }
 
+    .project-card + .project-card {
+      margin-top: 28px;
+    }
+
+    /* Econ Tutor: draggable price node on a demand-supply diagram */
+    .market-plot {
+      width: 100%;
+      position: relative;
+    }
+
+    .market-svg {
+      display: block;
+      width: 100%;
+      height: auto;
+      user-select: none;
+      -webkit-user-select: none;
+    }
+
+    .market-hit {
+      cursor: ns-resize;
+      touch-action: none;
+    }
+
+    .market-node {
+      cursor: ns-resize;
+      touch-action: none;
+      outline: none;
+    }
+
+    .market-node .node-focus {
+      opacity: 0;
+      transition: opacity 0.2s ease;
+    }
+
+    .market-node:focus-visible .node-focus {
+      opacity: 1;
+    }
+
+    .market-node .node-pulse {
+      transform-box: fill-box;
+      transform-origin: center;
+      animation: nodePulse 1.8s var(--ease-in-out) infinite;
+    }
+
+    .market-node.is-touched .node-pulse {
+      display: none;
+    }
+
+    @keyframes nodePulse {
+      0% { transform: scale(1); opacity: 0.7; }
+      100% { transform: scale(2.4); opacity: 0; }
+    }
+
+    .market-readout {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 12px;
+      margin-top: 16px;
+      padding-top: 14px;
+      border-top: 1px solid rgba(217, 196, 143, 0.2);
+    }
+
+    .market-stat-label {
+      display: block;
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: 11px;
+      color: #8F98AE;
+    }
+
+    .market-stat-value {
+      display: block;
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: 15px;
+      font-weight: 500;
+      color: #F8F5ED;
+      font-variant-numeric: tabular-nums;
+    }
+
+    .market-stat-value.is-gap {
+      color: var(--gold-soft);
+    }
+
+    .market-verdict {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-end;
+      gap: 16px;
+      margin-top: 14px;
+    }
+
+    .market-state {
+      color: #F8F5ED;
+      font-size: 15px;
+      margin-bottom: 4px;
+    }
+
+    .market-state strong {
+      font-family: 'Source Serif 4', Georgia, serif;
+      font-size: 17px;
+      font-weight: 600;
+    }
+
+    .market-state [lang="ms"] {
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: 12px;
+      color: var(--gold-soft);
+      margin-left: 6px;
+    }
+
+    .market-explain {
+      color: #CAD0DE;
+      font-size: 13.5px;
+      line-height: 1.5;
+      max-width: 52ch;
+    }
+
+    .market-clear-btn {
+      flex-shrink: 0;
+      background: transparent;
+      border: 1px solid rgba(217, 196, 143, 0.5);
+      color: var(--gold-soft);
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: 12.5px;
+      padding: 8px 14px;
+      min-height: 44px;
+      border-radius: var(--radius-sm);
+      cursor: pointer;
+      transition: background 0.2s ease, color 0.2s ease, border-color 0.2s ease;
+    }
+
+    .market-clear-btn:hover:not(:disabled) {
+      background: rgba(217, 196, 143, 0.12);
+      color: #F8F5ED;
+    }
+
+    .market-clear-btn:focus-visible {
+      outline: 2px solid var(--gold-soft);
+      outline-offset: 2px;
+    }
+
+    .market-clear-btn:disabled {
+      border-color: rgba(143, 152, 174, 0.35);
+      color: #8F98AE;
+      cursor: default;
+    }
+
     /* ==========================================================================
        SECTION 02: RESEARCH & PUBLICATIONS
        ========================================================================== */
@@ -1309,6 +1455,16 @@
         padding: 6px 12px;
         min-height: 40px;
       }
+      .project-card {
+        padding: 26px 20px;
+      }
+      .market-readout {
+        grid-template-columns: repeat(2, 1fr);
+      }
+      .market-verdict {
+        flex-direction: column;
+        align-items: stretch;
+      }
     }
 
     @media (prefers-reduced-motion: reduce) {
@@ -1384,7 +1540,7 @@
         <div class="count">01</div>
       </div>
       <p class="intro-line reveal-on-scroll stagger-1">
-        Applied software engineering built to resolve friction in real workflows, featuring client-side data scraping, OAuth synchronization, and analytical tracking.
+        Applied software engineering built to resolve friction in real workflows, from client-side data scraping and OAuth synchronization to interactive economics teaching.
       </p>
 
       <div class="project-card reveal-on-scroll stagger-2">
@@ -1556,6 +1712,89 @@
           </a>
           <a class="action-link" href="https://gitdiagram.com/aidilfarhan/rekodja-webapp" target="_blank" rel="noopener">
             Web App Architecture Diagram
+            <svg viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+          </a>
+        </div>
+      </div>
+
+      <div class="project-card reveal-on-scroll stagger-2">
+        <div class="card-header-flex">
+          <h3>Econ Tutor : SPM Economics Study Site</h3>
+          <span class="project-badge">Web App</span>
+        </div>
+        <div class="role">Personal Engineering Project : Interactive KSSM Form 4 &amp; 5 Economics</div>
+
+        <!-- Problem / Solution Structure -->
+        <div class="problem-solution-grid">
+          <div class="ps-block">
+            <h5>The Problem</h5>
+            <p>SPM Economics is graph-heavy, yet students learn from static textbook diagrams they never move, and practise from trial papers scattered across PDFs that give no feedback on a phone.</p>
+          </div>
+          <div class="ps-block">
+            <h5>The Solution</h5>
+            <p>One sign-in site covering every Form 4 and Form 5 chapter: notes in textbook order, diagrams students drag to watch price and quantity respond, recall drills, calculators, and trial papers with schemes.</p>
+          </div>
+        </div>
+
+        <!-- Interactive Graphic: Draggable price node on a demand-supply diagram -->
+        <div class="flow-diagram-container">
+          <div class="flow-diagram-header">
+            <span class="flow-diagram-title">
+              <span class="live-node-pulse"></span>
+              ECON TUTOR GRAPH ENGINE &bull; MARKET FOR ONE GOOD
+            </span>
+            <span class="mono" style="font-size: 11px; color: #8F98AE;">Drag the gold node or use arrow keys</span>
+          </div>
+
+          <div class="market-plot" id="market-plot"></div>
+
+          <div class="market-readout">
+            <div><span class="market-stat-label">Price</span><span class="market-stat-value" id="market-p">RM 8.40</span></div>
+            <div><span class="market-stat-label">Quantity demanded</span><span class="market-stat-value" id="market-qd">16</span></div>
+            <div><span class="market-stat-label">Quantity supplied</span><span class="market-stat-value" id="market-qs">64</span></div>
+            <div><span class="market-stat-label" id="market-gap-label">Surplus</span><span class="market-stat-value is-gap" id="market-gap">48 units</span></div>
+          </div>
+
+          <div class="market-verdict">
+            <div>
+              <p class="market-state" aria-live="polite"><strong id="market-state">Excess supply</strong><span lang="ms" id="market-state-ms">Lebihan penawaran</span></p>
+              <p class="market-explain" id="market-explain">At RM 8.40, sellers offer 64 units but buyers want only 16. Unsold stock pushes the price down toward P*.</p>
+            </div>
+            <button type="button" class="market-clear-btn" id="market-clear">Let the market clear</button>
+          </div>
+        </div>
+
+        <ul class="features-list">
+          <li><strong>Draggable Graph Engine:</strong> 36 SVG diagrams inside the notes. Nodes, price lines and curves move by mouse, touch or arrow keys, with values updating as they move. The panel above is a simplified version of one of them.</li>
+          <li><strong>Active Recall:</strong> 263 flashcards students mark <em lang="ms">Dah ingat</em> or <em lang="ms">Ulang lagi</em>, and 178 chapter quiz questions with an explanation for every answer. Progress stays in the student's own browser.</li>
+          <li><strong>39 Syllabus Calculators:</strong> from opportunity cost and elasticity to GDP and exchange rates, each showing the answer, step-by-step working and an interpretation.</li>
+          <li><strong>Trial Paper Practice:</strong> Kelantan 2025, Seberang Perai 2025 and Perak 2024 papers, with Kertas 1 as an objective quiz and Kertas 2 answer boxes students self-mark against the scheme.</li>
+          <li><strong>Allowlisted Access:</strong> Firebase Authentication sign-in, checked by a Vercel serverless function that verifies the token and an email allowlist before issuing a signed HttpOnly session cookie. Middleware guards every file.</li>
+        </ul>
+
+        <!-- Tech Stack Tags -->
+        <div class="tags">
+          <span class="tag">Vanilla JavaScript</span>
+          <span class="tag">SVG</span>
+          <span class="tag">Firebase Authentication</span>
+          <span class="tag">Vercel Functions &amp; Middleware</span>
+          <span class="tag">localStorage</span>
+          <span class="tag">No Build Step</span>
+        </div>
+
+        <div class="note-box">
+          <strong style="color: var(--navy); font-family: 'IBM Plex Mono', monospace;">Access Note:</strong>
+          The live site is limited to registered students through an email allowlist, so visitors will see a sign-in page. The source code is public on GitHub.
+        </div>
+
+        <!-- Action Links -->
+        <div class="card-actions">
+          <a class="action-link" href="https://econwebsite.vercel.app/" target="_blank" rel="noopener">
+            Econ Tutor Live Site (registered students)
+            <svg viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+          </a>
+          <a class="action-link" href="https://github.com/AidilFarhan/ECON-TUTOR" target="_blank" rel="noopener">
+            Source Code on GitHub
             <svg viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
           </a>
         </div>
@@ -2209,6 +2448,308 @@
           }
         });
       });
+
+      // 3b. Econ Tutor Market Diagram (drag the price node to see excess demand or excess supply)
+      // Linear market: Qd = 100 - 10P, Qs = 10P - 20, so equilibrium sits at P* = RM 6, Q* = 40.
+      const marketPlot = document.getElementById('market-plot');
+      if (marketPlot) {
+        const SVG_NS = 'http://www.w3.org/2000/svg';
+        const P_MIN = 2.5, P_MAX_DRAG = 9.5, P_AXIS = 11, Q_AXIS = 100;
+        const P_EQ = 6, Q_EQ = 40;
+        const qd = (p) => 100 - 10 * p;
+        const qs = (p) => 10 * p - 20;
+        const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+        const readP = document.getElementById('market-p');
+        const readQd = document.getElementById('market-qd');
+        const readQs = document.getElementById('market-qs');
+        const readGap = document.getElementById('market-gap');
+        const readGapLabel = document.getElementById('market-gap-label');
+        const stateEl = document.getElementById('market-state');
+        const stateMsEl = document.getElementById('market-state-ms');
+        const explainEl = document.getElementById('market-explain');
+        const clearBtn = document.getElementById('market-clear');
+
+        function el(tag, attrs, parent) {
+          const node = document.createElementNS(SVG_NS, tag);
+          for (const k in attrs) node.setAttribute(k, attrs[k]);
+          if (parent) parent.appendChild(node);
+          return node;
+        }
+        function set(node, attrs) {
+          for (const k in attrs) node.setAttribute(k, attrs[k]);
+        }
+
+        const mono = "'IBM Plex Mono', monospace";
+        const svg = el('svg', { class: 'market-svg', role: 'img', 'aria-label': 'Demand and supply diagram with a draggable price level' }, marketPlot);
+        const axes = el('path', { stroke: 'rgba(217, 196, 143, 0.45)', 'stroke-width': 1.5, fill: 'none' }, svg);
+        const eqGuide = el('path', { stroke: 'rgba(202, 208, 222, 0.28)', 'stroke-width': 1, 'stroke-dasharray': '3 4', fill: 'none' }, svg);
+        const demandLine = el('line', { stroke: '#CAD0DE', 'stroke-width': 2.2, 'stroke-linecap': 'round' }, svg);
+        const supplyLine = el('line', { stroke: '#D9C48F', 'stroke-width': 2.2, 'stroke-linecap': 'round' }, svg);
+        const labelD = el('text', { fill: '#CAD0DE', 'font-size': 13, 'font-family': mono, 'font-weight': 600 }, svg);
+        const labelS = el('text', { fill: '#D9C48F', 'font-size': 13, 'font-family': mono, 'font-weight': 600 }, svg);
+        const labelYAxis = el('text', { fill: '#8F98AE', 'font-size': 11, 'font-family': mono }, svg);
+        const labelXAxis = el('text', { fill: '#8F98AE', 'font-size': 11, 'font-family': mono, 'text-anchor': 'end' }, svg);
+        const labelPEq = el('text', { fill: '#8F98AE', 'font-size': 10.5, 'font-family': mono, 'text-anchor': 'end' }, svg);
+        const labelQEq = el('text', { fill: '#8F98AE', 'font-size': 10.5, 'font-family': mono, 'text-anchor': 'middle' }, svg);
+        const eqDot = el('circle', { r: 4, fill: '#0E1830', stroke: '#CAD0DE', 'stroke-width': 1.5 }, svg);
+        labelYAxis.textContent = 'Price (RM)';
+        labelD.textContent = 'D';
+        labelS.textContent = 'S';
+
+        const priceLine = el('line', { stroke: 'rgba(217, 196, 143, 0.5)', 'stroke-width': 1, 'stroke-dasharray': '4 4' }, svg);
+        const dropD = el('line', { stroke: 'rgba(202, 208, 222, 0.45)', 'stroke-width': 1, 'stroke-dasharray': '2 3' }, svg);
+        const dropS = el('line', { stroke: 'rgba(217, 196, 143, 0.45)', 'stroke-width': 1, 'stroke-dasharray': '2 3' }, svg);
+        const labelQd = el('text', { fill: '#CAD0DE', 'font-size': 10.5, 'font-family': mono, 'text-anchor': 'middle' }, svg);
+        const labelQs = el('text', { fill: '#D9C48F', 'font-size': 10.5, 'font-family': mono, 'text-anchor': 'middle' }, svg);
+        labelQd.textContent = 'Qd';
+        labelQs.textContent = 'Qs';
+        const gapBar = el('path', { stroke: '#D9C48F', 'stroke-width': 5, 'stroke-linecap': 'butt', fill: 'none' }, svg);
+        const gapCaps = el('path', { stroke: '#D9C48F', 'stroke-width': 1.5, fill: 'none' }, svg);
+        const gapLabel = el('text', {
+          fill: '#F8F5ED', 'font-size': 11.5, 'font-family': mono, 'text-anchor': 'middle', 'font-weight': 500,
+          stroke: '#0E1830', 'stroke-width': 4, 'stroke-linejoin': 'round', 'paint-order': 'stroke'
+        }, svg);
+        const dotD = el('circle', { r: 3.5, fill: '#CAD0DE' }, svg);
+        const dotS = el('circle', { r: 3.5, fill: '#D9C48F' }, svg);
+        const pressure = el('path', { stroke: '#D9C48F', 'stroke-width': 1.5, fill: 'none', 'stroke-linecap': 'round', 'stroke-linejoin': 'round' }, svg);
+
+        // Wide invisible strip along the price line, so the line itself is easy to grab on touch screens
+        const hitStrip = el('rect', { class: 'market-hit', fill: 'transparent' }, svg);
+
+        const node = el('g', {
+          class: 'market-node', tabindex: 0, role: 'slider',
+          'aria-label': 'Market price', 'aria-valuemin': P_MIN, 'aria-valuemax': P_MAX_DRAG
+        }, svg);
+        const nodeFocus = el('circle', { class: 'node-focus', r: 14, fill: 'none', stroke: '#F8F5ED', 'stroke-width': 1.5 }, node);
+        const nodePulse = el('circle', { class: 'node-pulse', r: 8, fill: 'none', stroke: '#D9C48F', 'stroke-width': 1.5 }, node);
+        const nodeHit = el('circle', { r: 22, fill: 'transparent' }, node);
+        const nodeDot = el('circle', { r: 8, fill: '#D9C48F', stroke: '#0E1830', 'stroke-width': 2 }, node);
+        const labelP = el('text', { fill: '#F8F5ED', 'font-size': 11.5, 'font-family': mono, 'text-anchor': 'end', 'font-weight': 500 }, svg);
+
+        let W = 0, H = 0, left = 64, right = 20, top = 26, bottom = 42;
+        let price = P_EQ;
+        let lastState = '';
+        let animFrame = null;
+
+        const x = (q) => left + (q / Q_AXIS) * (W - left - right);
+        const y = (p) => top + (1 - p / P_AXIS) * (H - top - bottom);
+        const pFromY = (py) => P_AXIS * (1 - (py - top) / (H - top - bottom));
+
+        function layout() {
+          W = Math.round(marketPlot.clientWidth);
+          if (!W) return;
+          H = Math.round(Math.max(240, Math.min(340, W < 480 ? W * 0.82 : W * 0.5)));
+          left = W < 400 ? 58 : 64;
+          set(svg, { viewBox: `0 0 ${W} ${H}`, width: W, height: H });
+
+          const x0 = x(0), y0 = y(0);
+          set(axes, { d: `M${x0} ${top - 12} L${x0} ${y0} L${W - right + 6} ${y0}` });
+          set(labelYAxis, { x: x0 + 8, y: top - 2 });
+          set(labelXAxis, { x: W - right, y: y0 + 30 });
+          labelXAxis.textContent = W < 300 ? 'Q' : 'Quantity';
+
+          set(demandLine, { x1: x(qd(10)), y1: y(10), x2: x(qd(1.2)), y2: y(1.2) });
+          set(supplyLine, { x1: x(qs(2)), y1: y(2), x2: x(qs(10.6)), y2: y(10.6) });
+          set(labelD, { x: x(qd(1.2)) + 6, y: y(1.2) + 4 });
+          set(labelS, { x: x(qs(10.6)) + 8, y: y(10.6) + 4 });
+
+          set(eqGuide, { d: `M${x0} ${y(P_EQ)} L${x(Q_EQ)} ${y(P_EQ)} L${x(Q_EQ)} ${y0}` });
+          set(eqDot, { cx: x(Q_EQ), cy: y(P_EQ) });
+          labelPEq.textContent = 'P* 6';
+          labelQEq.textContent = 'Q* 40';
+          set(labelQEq, { x: x(Q_EQ), y: y0 + 30 });
+          set(hitStrip, { x: x0, width: W - right - x0, height: 36 });
+          update();
+        }
+
+        function update() {
+          if (!W) return;
+          const dq = qd(price), sq = qs(price);
+          const gap = Math.abs(sq - dq);
+          const atEq = Math.abs(price - P_EQ) < 0.005;
+          const state = atEq ? 'eq' : (price > P_EQ ? 'surplus' : 'shortage');
+          const py = y(price), x0 = x(0), y0 = y(0);
+          const xd = x(dq), xs = x(sq);
+
+          set(priceLine, { x1: x0, y1: py, x2: W - right, y2: py });
+          set(hitStrip, { y: py - 18 });
+          set(node, { transform: `translate(${x0} ${py})`, 'aria-valuenow': price.toFixed(2) });
+          set(labelP, { x: x0 - 12, y: py + 4 });
+          labelP.textContent = price.toFixed(2);
+
+          // P* label moves aside when the price node sits on top of it
+          const nearEq = Math.abs(py - y(P_EQ)) < 16;
+          set(labelPEq, { x: x0 - 12, y: y(P_EQ) + 4, opacity: nearEq ? 0 : 1 });
+
+          set(dotD, { cx: xd, cy: py });
+          set(dotS, { cx: xs, cy: py });
+          set(dropD, { x1: xd, y1: py, x2: xd, y2: y0 });
+          set(dropS, { x1: xs, y1: py, x2: xs, y2: y0 });
+          // Qd and Qs axis labels hide when they would overlap each other
+          const showQLabels = Math.abs(xs - xd) >= 26;
+          set(labelQd, { x: xd, y: y0 + 15, opacity: showQLabels ? 1 : 0 });
+          set(labelQs, { x: xs, y: y0 + 15, opacity: showQLabels ? 1 : 0 });
+
+          if (atEq) {
+            set(gapBar, { d: '' });
+            set(gapCaps, { d: '' });
+            set(pressure, { d: '' });
+            gapLabel.textContent = '';
+          } else {
+            const a = Math.min(xd, xs), b = Math.max(xd, xs);
+            set(gapBar, { d: `M${a} ${py} L${b} ${py}` });
+            set(gapCaps, { d: `M${a} ${py - 7} L${a} ${py + 7} M${b} ${py - 7} L${b} ${py + 7}` });
+            // Label sits on the side of the line away from the curves' crossing, unless the axis title is in the way
+            const labelY = state === 'surplus' && py - 12 > top + 16 ? py - 12 : py + 20;
+            set(gapLabel, { x: (a + b) / 2, y: labelY });
+            gapLabel.textContent = `${state === 'surplus' ? 'Surplus' : 'Shortage'} ${Math.round(gap)}`;
+
+            // Arrow on the price axis pointing toward P*, showing which way the price is pushed
+            const dir = state === 'surplus' ? 1 : -1;
+            const len = Math.min(26, Math.abs(y(P_EQ) - py) - 10);
+            if (len > 8) {
+              const ax = x0 + 18, ay1 = py + dir * 12, ay2 = ay1 + dir * len;
+              set(pressure, { d: `M${ax} ${ay1} L${ax} ${ay2} M${ax - 4} ${ay2 - dir * 5} L${ax} ${ay2} L${ax + 4} ${ay2 - dir * 5}` });
+            } else {
+              set(pressure, { d: '' });
+            }
+          }
+
+          readP.textContent = `RM ${price.toFixed(2)}`;
+          readQd.textContent = Math.round(dq);
+          readQs.textContent = Math.round(sq);
+          readGap.textContent = atEq ? '0 units' : `${Math.round(gap)} units`;
+          readGapLabel.textContent = atEq ? 'Gap' : (state === 'surplus' ? 'Surplus' : 'Shortage');
+
+          const pTxt = `RM ${price.toFixed(2)}`;
+          if (state === 'surplus') {
+            explainEl.textContent = `At ${pTxt}, sellers offer ${Math.round(sq)} units but buyers want only ${Math.round(dq)}. Unsold stock pushes the price down toward P*.`;
+          } else if (state === 'shortage') {
+            explainEl.textContent = `At ${pTxt}, buyers want ${Math.round(dq)} units but sellers offer only ${Math.round(sq)}. Buyers competing for the good push the price up toward P*.`;
+          } else {
+            explainEl.textContent = 'Quantity demanded equals quantity supplied at 40 units, so nothing pushes the price up or down.';
+          }
+
+          if (state !== lastState) {
+            lastState = state;
+            stateEl.textContent = state === 'surplus' ? 'Excess supply' : state === 'shortage' ? 'Excess demand' : 'Equilibrium';
+            stateMsEl.textContent = state === 'surplus' ? 'Lebihan penawaran' : state === 'shortage' ? 'Lebihan permintaan' : 'Keseimbangan';
+          }
+
+          const valueText = atEq ? `RM ${price.toFixed(2)}, equilibrium`
+            : `RM ${price.toFixed(2)}, ${state === 'surplus' ? 'excess supply' : 'excess demand'} of ${Math.round(gap)} units`;
+          node.setAttribute('aria-valuetext', valueText);
+          // A disabled button drops keyboard focus, so hand it to the price node instead
+          if (atEq && document.activeElement === clearBtn) node.focus();
+          clearBtn.disabled = atEq;
+        }
+
+        function setPrice(p) {
+          if (!Number.isFinite(p)) return;
+          let next = Math.max(P_MIN, Math.min(P_MAX_DRAG, p));
+          // Snap onto equilibrium when the node is released close to it
+          if (Math.abs(next - P_EQ) < 0.08) next = P_EQ;
+          price = Math.round(next * 100) / 100;
+          update();
+        }
+
+        function stopAnim() {
+          if (animFrame) cancelAnimationFrame(animFrame);
+          animFrame = null;
+        }
+
+        function animateTo(target, duration) {
+          stopAnim();
+          if (reduceMotion) { setPrice(target); return; }
+          const from = price, start = performance.now();
+          const step = (now) => {
+            const t = Math.min(1, (now - start) / duration);
+            const eased = 1 - Math.pow(1 - t, 3);
+            price = from + (target - from) * eased;
+            if (t < 1) { update(); animFrame = requestAnimationFrame(step); }
+            else { animFrame = null; setPrice(target); }
+          };
+          animFrame = requestAnimationFrame(step);
+        }
+
+        function markTouched() {
+          node.classList.add('is-touched');
+          stopAnim();
+        }
+
+        // Pointer dragging (mouse, pen, touch) on the node or the price line
+        let dragging = false;
+        function pointerToPrice(e) {
+          const rect = svg.getBoundingClientRect();
+          if (!H || !rect.height) return;
+          const py = (e.clientY - rect.top) * (H / rect.height);
+          setPrice(pFromY(py));
+        }
+        function startDrag(e) {
+          markTouched();
+          dragging = true;
+          try { svg.setPointerCapture(e.pointerId); } catch (err) { /* pointer already gone; drag still follows pointermove */ }
+          pointerToPrice(e);
+          e.preventDefault();
+        }
+        node.addEventListener('pointerdown', startDrag);
+        hitStrip.addEventListener('pointerdown', startDrag);
+        svg.addEventListener('pointermove', (e) => { if (dragging) pointerToPrice(e); });
+        const endDrag = (e) => {
+          if (!dragging) return;
+          dragging = false;
+          if (svg.hasPointerCapture(e.pointerId)) svg.releasePointerCapture(e.pointerId);
+        };
+        svg.addEventListener('pointerup', endDrag);
+        svg.addEventListener('pointercancel', endDrag);
+
+        // Keyboard control on the slider node
+        node.addEventListener('keydown', (e) => {
+          const stepSize = e.shiftKey ? 0.5 : 0.1;
+          let next = null;
+          if (e.key === 'ArrowUp' || e.key === 'ArrowRight') next = price + stepSize;
+          else if (e.key === 'ArrowDown' || e.key === 'ArrowLeft') next = price - stepSize;
+          else if (e.key === 'PageUp') next = price + 1;
+          else if (e.key === 'PageDown') next = price - 1;
+          else if (e.key === 'Home') next = P_MIN;
+          else if (e.key === 'End') next = P_MAX_DRAG;
+          if (next === null) return;
+          e.preventDefault();
+          markTouched();
+          // Keys step straight through equilibrium without the drag snap swallowing small moves
+          price = Math.round(Math.max(P_MIN, Math.min(P_MAX_DRAG, next)) * 100) / 100;
+          update();
+        });
+
+        clearBtn.addEventListener('click', () => {
+          markTouched();
+          animateTo(P_EQ, 900);
+        });
+
+        layout();
+        if ('ResizeObserver' in window) {
+          new ResizeObserver(() => layout()).observe(marketPlot);
+        } else {
+          window.addEventListener('resize', layout);
+        }
+
+        // First view: the node rises from P* to a surplus price once, showing that it moves
+        const introPrice = 8.4;
+        if ('IntersectionObserver' in window && !reduceMotion) {
+          const introObserver = new IntersectionObserver((entries, obs) => {
+            if (entries.some(en => en.isIntersecting)) {
+              obs.disconnect();
+              if (!node.classList.contains('is-touched')) setTimeout(() => {
+                if (!node.classList.contains('is-touched')) animateTo(introPrice, 1100);
+              }, 500);
+            }
+          }, { threshold: 0.5 });
+          introObserver.observe(marketPlot);
+        } else {
+          setPrice(introPrice);
+        }
+      }
 
       // 4. Scroll-Tilted 3D Grid Implementation (Exact formula from React code)
       const images = [
