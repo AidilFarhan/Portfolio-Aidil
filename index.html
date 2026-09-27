@@ -1752,7 +1752,7 @@
             <div><span class="market-stat-label">Price</span><span class="market-stat-value" id="market-p">RM 8.40</span></div>
             <div><span class="market-stat-label">Quantity demanded</span><span class="market-stat-value" id="market-qd">16</span></div>
             <div><span class="market-stat-label">Quantity supplied</span><span class="market-stat-value" id="market-qs">64</span></div>
-            <div><span class="market-stat-label" id="market-gap-label">Surplus</span><span class="market-stat-value is-gap" id="market-gap">48 units</span></div>
+            <div><span class="market-stat-label" id="market-gap-label">SS&gt;DD</span><span class="market-stat-value is-gap" id="market-gap">48 units</span></div>
           </div>
 
           <div class="market-verdict">
@@ -1784,17 +1784,13 @@
 
         <div class="note-box">
           <strong style="color: var(--navy); font-family: 'IBM Plex Mono', monospace;">Access Note:</strong>
-          The live site is limited to registered students through an email allowlist, so visitors will see a sign-in page. The source code is public on GitHub.
+          The live site is limited to registered students through an email allowlist, so visitors will see a sign-in page.
         </div>
 
         <!-- Action Links -->
         <div class="card-actions">
           <a class="action-link" href="https://econwebsite.vercel.app/" target="_blank" rel="noopener">
             Econ Tutor Live Site (registered students)
-            <svg viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
-          </a>
-          <a class="action-link" href="https://github.com/AidilFarhan/ECON-TUTOR" target="_blank" rel="noopener">
-            Source Code on GitHub
             <svg viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
           </a>
         </div>
@@ -2603,7 +2599,7 @@
             // Label sits on the side of the line away from the curves' crossing, unless the axis title is in the way
             const labelY = state === 'surplus' && py - 12 > top + 16 ? py - 12 : py + 20;
             set(gapLabel, { x: (a + b) / 2, y: labelY });
-            gapLabel.textContent = `${state === 'surplus' ? 'Surplus' : 'Shortage'} ${Math.round(gap)}`;
+            gapLabel.textContent = `${state === 'surplus' ? 'SS>DD' : 'DD>SS'} ${Math.round(gap)}`;
 
             // Arrow on the price axis pointing toward P*, showing which way the price is pushed
             const dir = state === 'surplus' ? 1 : -1;
@@ -2620,7 +2616,7 @@
           readQd.textContent = Math.round(dq);
           readQs.textContent = Math.round(sq);
           readGap.textContent = atEq ? '0 units' : `${Math.round(gap)} units`;
-          readGapLabel.textContent = atEq ? 'Gap' : (state === 'surplus' ? 'Surplus' : 'Shortage');
+          readGapLabel.textContent = atEq ? 'Gap' : (state === 'surplus' ? 'SS>DD' : 'DD>SS');
 
           const pTxt = `RM ${price.toFixed(2)}`;
           if (state === 'surplus') {
