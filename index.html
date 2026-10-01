@@ -51,15 +51,15 @@
       --ink-faint: #8B93A2;
       --line: #DBDCD3;
       --line-subtle: rgba(219, 220, 211, 0.6);
-      
+
       --radius-sm: 2px;
       --radius-md: 4px;
       --radius-lg: 8px;
-      
+
       --shadow-sm: 0 1px 3px rgba(14, 24, 48, 0.04);
       --shadow-md: 0 8px 20px -4px rgba(14, 24, 48, 0.08);
       --shadow-hover: 0 16px 32px -6px rgba(14, 24, 48, 0.12);
-      
+
       --ease-out-expo: cubic-bezier(0.16, 1, 0.3, 1);
       --ease-in-out: cubic-bezier(0.4, 0, 0.2, 1);
       --transition-standard: 0.3s var(--ease-out-expo);
@@ -1499,8 +1499,50 @@
         transform: none !important;
       }
     }
-  </style>
-</head>
+
+/* Local preview: retain the editorial palette, increase hierarchy and reading comfort. */
+:root { --ink-faint:#626b79; }
+.wrap { max-width:1080px; }
+.site-nav { display:flex;align-items:center;justify-content:space-between;gap:24px;padding:21px max(24px,calc((100vw - 1080px)/2));background:var(--navy-deep);color:var(--paper);border-bottom:1px solid #35405a; }
+.site-nav a {color:inherit;text-decoration:none;font-size:13px;}.site-nav>div{display:flex;gap:25px}.nav-name{font-weight:700;font-size:20px!important}.nav-name span{font-weight:400;font-size:12px;color:var(--gold-soft)}.nav-contact{color:var(--gold-soft)!important}
+.skip-link{position:fixed;top:-60px;left:20px;z-index:10000;padding:12px;background:white;color:var(--navy)}.skip-link:focus{top:8px}
+section{scroll-margin-top:24px;padding:72px 0}.section-head h2{font-size:36px}.intro-line{max-width:760px;color:var(--ink-muted)}
+header.hero{padding:88px 0 50px}#hero-canvas{opacity:.17;pointer-events:none}.hero-accent-ring{opacity:.15}.hero-kicker{font-size:13px;color:var(--gold-soft);letter-spacing:.09em;margin-bottom:20px}header.hero h1{font-size:clamp(46px,6vw,76px);line-height:1.06;max-width:800px}.full-name{display:block;font-size:.43em;font-weight:400;margin-top:16px;color:#dce1e8}header.hero p.tagline{max-width:650px;font-size:19px;line-height:1.7;margin-top:27px}.hero-actions{display:flex;gap:14px;margin-top:30px;flex-wrap:wrap}.primary-button,.secondary-button{display:inline-flex;padding:13px 22px;font-size:14px;font-weight:600;text-decoration:none;border:1px solid var(--gold-soft)}.primary-button{background:var(--gold-soft);color:var(--navy-deep)}.secondary-button{color:var(--paper);border-color:#617087}.hero-context{display:flex;gap:24px;flex-wrap:wrap;margin-top:40px;font-size:12px;color:#c3ccda}.hero-context span+span{border-left:1px solid #526078;padding-left:24px}header.hero .contact-row{margin-top:26px;padding-top:20px;gap:24px}.contact-item{font-size:12px}.contact-item:last-child{display:none}
+.project-card{padding:32px;margin-top:32px;box-shadow:none;border:1px solid var(--line)}.project-card h3{font-size:27px}.project-card .role{color:#746025;font-size:12px;line-height:1.8}.project-impact{display:flex;align-items:center;justify-content:space-between;border-top:1px solid var(--line);border-bottom:1px solid var(--line);margin:24px 0;padding:18px 0;gap:20px}.project-impact strong{font-family:'Source Serif 4',serif;font-size:38px;line-height:1}.project-impact strong span{font-family:'IBM Plex Sans',sans-serif;font-weight:400;font-size:14px;margin-left:14px}.project-impact p{color:var(--ink-muted);font-size:12px;margin:0}.problem-solution-grid{background:none;border:0;padding:0;gap:32px}.ps-block h5{color:#746025}.technical-details{margin:24px 0;border-block:1px solid var(--line);padding:16px 0}.technical-details summary{cursor:pointer;color:var(--navy);font-weight:600;font-size:14px}.technical-details summary span{font-weight:400;color:var(--ink-muted);margin-left:15px;font-size:12px}.technical-details .flow-diagram-container{margin-top:20px}.features-list li{font-size:15px}.note-box{font-size:13px}.card-actions{gap:20px}.card-actions a:nth-child(n+3){font-size:12px}.pub-card,.policy-card{box-shadow:none}.venue-tag,.credit-tag{color:#746025}.teaching-row{display:grid;grid-template-columns:1.5fr 1fr;gap:56px}.teaching-row h3{font-size:28px;margin:12px 0}.teaching-row p{color:var(--ink-muted)}.teaching-result{border-left:2px solid var(--gold);padding-left:30px}.teaching-result strong{font-family:'Source Serif 4',serif;font-size:48px;color:var(--navy)}.teaching-result p{font-size:14px;margin-top:10px}a:focus-visible,button:focus-visible,summary:focus-visible{outline:3px solid var(--gold);outline-offset:5px}
+@media(max-width:700px){.site-nav{flex-wrap:wrap;padding:18px 22px;gap:15px}.site-nav>div{order:3;width:100%;gap:18px;overflow:auto;padding-bottom:4px}.site-nav>div a{white-space:nowrap;font-size:12px}header.hero{padding:50px 0 34px}.wrap{padding-inline:22px}header.hero h1{font-size:49px}.full-name{font-size:22px}.hero-context{gap:10px;flex-direction:column}.hero-context span+span{border:0;padding:0}.project-card{padding:22px}.project-card h3{font-size:25px}.project-impact{align-items:flex-start;flex-direction:column;gap:12px}.project-impact strong{font-size:34px}.teaching-row{grid-template-columns:1fr;gap:25px}.section-head h2{font-size:29px}section{padding:48px 0}.contact-row{overflow-wrap:anywhere}.hero p.tagline{font-size:17px!important}.problem-solution-grid{grid-template-columns:1fr}.card-header-flex{gap:12px}.hero-context{margin-top:28px}}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*,*::before,*::after{animation:none!important;transition:none!important}.reveal-on-scroll,.hero h1,.hero .tagline,.eyebrow-container,.hero .contact-row{opacity:1!important;transform:none!important}#hero-canvas{display:none}}
+.testimonial{margin-top:32px;border-top:1px solid var(--line);padding-top:26px}.testimonial summary{cursor:pointer;font-weight:600;color:var(--navy)}.testimonial figure{margin:20px 0 0;max-width:420px}.testimonial img{width:100%;height:auto;display:block;border-radius:4px}.testimonial figcaption{font-size:12px;color:var(--ink-muted);margin-top:12px}</style>
+<style>
+header.hero h1{font-size:clamp(30px,3.65vw,48px);max-width:none;white-space:nowrap;line-height:1.3}
+.full-name{display:inline;font-size:inherit;font-weight:inherit;color:inherit;margin:0}
+.full-name::before{content:' '}
+p,.features-list li,.focus-item .val,.note-box{ text-align:justify; text-justify:inter-word; }
+.project-impact p,.hero-context,.testimonial figcaption,.role,.market-state{text-align:left}
+@media(max-width:700px){header.hero h1{white-space:normal;font-size:36px;line-height:1.25}.full-name{display:inline;font-size:inherit}p,.features-list li,.note-box{hyphens:auto}}
+</style><style>
+.hero-intro-grid{display:grid;grid-template-columns:minmax(0,1fr) 300px;gap:64px;align-items:center;margin-top:28px}
+header.hero .hero-intro-grid p.tagline{margin:0;max-width:650px}
+.hero-portrait{margin:0;border:1px solid var(--gold-soft);padding:7px;background:rgba(14,24,48,.4)}
+.hero-portrait img{display:block;width:100%;height:285px;object-fit:cover;object-position:50% 57%}
+@media(max-width:700px){.hero-intro-grid{grid-template-columns:1fr;gap:24px}.hero-portrait{width:min(100%,310px)}.hero-portrait img{height:285px}}
+</style><style>
+header.hero{position:relative;isolation:isolate;overflow:hidden;min-height:640px}
+header.hero .wrap{position:relative;z-index:2}
+.hero-intro-grid{display:block;margin-top:30px}
+header.hero .hero-intro-grid p.tagline{max-width:560px;position:relative;z-index:2}
+.hero-portrait{position:absolute;right:calc((1080px - 100vw)/2);top:-88px;bottom:-50px;width:56vw;max-width:850px;border:0;padding:0;background:none;z-index:-1;pointer-events:none;overflow:hidden;mask-image:linear-gradient(to right,transparent 0%,rgba(0,0,0,.18) 17%,black 42%);-webkit-mask-image:linear-gradient(to right,transparent 0%,rgba(0,0,0,.18) 17%,black 42%)}
+.hero-portrait img{width:100%;height:100%;object-fit:cover;object-position:50% 42%;opacity:.86}
+.hero-portrait::after{content:'';position:absolute;inset:0;background:linear-gradient(to top,var(--navy) 0%,transparent 35%),linear-gradient(to bottom,rgba(22,35,63,.2),transparent 40%)}
+header.hero h1{position:relative;z-index:2;text-shadow:0 2px 18px var(--navy)}
+header.hero .hero-actions,header.hero .hero-context,header.hero .contact-row{position:relative;z-index:2}
+header.hero .hero-context{max-width:650px}header.hero .contact-row{max-width:700px}
+@media(min-width:701px) and (max-width:1128px){.hero-portrait{right:-24px;width:57vw}header.hero .hero-intro-grid p.tagline{max-width:52%}}
+@media(max-width:700px){header.hero{min-height:760px}.hero-portrait{right:-22px;top:70px;bottom:auto;height:490px;width:85vw;max-width:none;opacity:.6;mask-image:linear-gradient(to right,transparent,black 60%);-webkit-mask-image:linear-gradient(to right,transparent,black 60%)}.hero-portrait img{height:100%}.hero-portrait::after{background:linear-gradient(to top,var(--navy),transparent 65%)}header.hero .hero-intro-grid p.tagline{max-width:100%;text-shadow:0 1px 8px var(--navy)}.hero-intro-grid{display:block}.hero-portrait{margin:0}}
+</style><style>
+@media(min-width:701px){.hero-portrait{right:calc((1080px - 100vw)/2 - 100px);width:49vw;max-width:750px}.hero-portrait img{object-position:38% 42%}header.hero .hero-actions{max-width:560px}header.hero .hero-context,header.hero .contact-row{max-width:580px}}
+@media(min-width:701px) and (max-width:1128px){.hero-portrait{right:-100px;width:53vw}}
+@media(max-width:700px){.hero-portrait{right:-80px;width:85vw}.hero-portrait img{object-position:35% 42%}}
+</style><style>#tools{padding:32px 0;border-top:1px solid var(--line)}.tools-logos{display:flex;align-items:center;justify-content:space-between;gap:clamp(12px,2vw,26px);overflow-x:auto;padding:12px 4px;scrollbar-width:thin}.tool-logo{display:flex;flex-direction:column;align-items:center;justify-content:center;gap:10px;flex:0 0 80px;min-height:82px}.tool-label{font-size:11px;line-height:1.4;color:var(--ink-muted);text-align:center;white-space:nowrap}.tool-logo img{width:46px;height:46px;object-fit:contain}.tool-logo:focus-visible{outline:2px solid var(--gold);outline-offset:4px}@media(max-width:700px){#tools{padding:20px 0}.tools-logos{gap:24px;justify-content:flex-start}.tool-logo{flex-basis:80px}.tool-logo img{width:38px;height:38px}}</style><style id="wide-screen-layout">@media(min-width:1200px){#research .wrap{max-width:1320px;padding-inline:40px}}</style><style id="research-carousel-style">.research-layout{display:grid;grid-template-columns:minmax(0,1fr) 250px;gap:36px;align-items:start}.research-articles{min-width:0}.research-carousel{position:sticky;top:24px;margin-top:28px}.research-carousel-toggle{display:block;margin:0 0 12px auto;background:none;border:0;color:var(--ink-muted);font:inherit;font-size:12px;cursor:pointer;text-decoration:underline;text-underline-offset:4px}.research-carousel-window{height:650px;overflow:hidden;mask-image:linear-gradient(transparent,black 5%,black 95%,transparent)}.research-carousel-track{animation:research-photo-scroll 48s linear infinite}.research-photo-set{display:flex;flex-direction:column;gap:16px;padding-bottom:16px}.research-photo-set img{display:block;width:100%;height:195px;object-fit:cover;border-radius:3px}.research-carousel:hover .research-carousel-track,.research-carousel:focus-within .research-carousel-track,.research-carousel.is-paused .research-carousel-track{animation-play-state:paused}@keyframes research-photo-scroll{to{transform:translateY(-50%)}}@media(max-width:1000px){.research-layout{grid-template-columns:1fr}.research-carousel{position:relative;top:auto;margin-top:10px}.research-carousel-window{height:195px;mask-image:linear-gradient(to right,transparent,black 3%,black 97%,transparent)}.research-carousel-track{display:flex;width:max-content;animation-name:research-photo-horizontal}.research-photo-set{flex-direction:row;padding-bottom:0;padding-right:16px}.research-photo-set img{width:250px;flex:none}@keyframes research-photo-horizontal{to{transform:translateX(-50%)}}}@media(prefers-reduced-motion:reduce){.research-carousel-track{animation:none}.research-carousel-window{overflow:auto;mask-image:none}.research-carousel-toggle{display:none}}</style><style id="policy-skyline-style">#policy{position:relative;isolation:isolate;overflow:hidden;padding-bottom:180px;background:#eef0ec}#policy::before{content:"";position:absolute;z-index:-1;pointer-events:none;inset:0;background-image:url('./assets/kl-skyline-line-art.png');background-repeat:no-repeat;background-position:center bottom;background-size:100% auto;opacity:.22}#policy .policy-card{background:rgba(255,255,252,.94)}@media(max-width:700px){#policy{padding-bottom:110px}#policy::before{background-size:100% auto;opacity:.25}}</style><style id="vertical-overview-style">.rekodja-layout{display:grid;grid-template-columns:minmax(0,1fr) 260px;gap:32px;align-items:start}.rekodja-main{min-width:0}.rekodja-overview{background:var(--navy);color:var(--paper);padding:24px;border-radius:3px}.rekodja-overview h4{font-size:18px;margin:0 0 24px;color:var(--gold-soft)}.vertical-pipeline{list-style:none;padding:0;margin:0}.vertical-pipeline li{position:relative;padding:16px 14px;margin-bottom:32px;border:1px solid #637086;background:#223254}.vertical-pipeline li:not(:last-child)::after{content:'↓';position:absolute;left:50%;bottom:-28px;transform:translateX(-50%);color:var(--gold-soft);font-size:22px}.vertical-pipeline li:last-child{margin-bottom:0}.vertical-pipeline strong{display:block;font-size:14px}.vertical-pipeline span{display:block;font-size:12px;line-height:1.6;margin-top:5px;color:#cbd2df}.overview-note{font-size:11px;line-height:1.7;color:#cbd2df;margin:20px 0 0;text-align:left!important}.rekodja-main .problem-solution-grid{grid-template-columns:1fr;gap:20px}.rekodja-main .arch-tabs-nav{flex-wrap:wrap;margin-top:24px}@media(max-width:800px){.rekodja-layout{grid-template-columns:1fr}.rekodja-overview{margin-top:8px}}</style><style id="pipeline-animation-style">.vertical-pipeline li:not(:last-child)::after{content:'';width:2px;height:30px;bottom:-32px;background:repeating-linear-gradient(to bottom,rgba(217,196,143,.5) 0 4px,transparent 4px 8px);font-size:0}.vertical-pipeline li:not(:last-child)::before{content:'';position:absolute;z-index:2;left:50%;top:calc(100% + 2px);width:7px;height:7px;border-radius:50%;background:var(--gold-soft);box-shadow:0 0 9px rgba(217,196,143,.5);animation:pipeline-packet 2.4s linear infinite}.vertical-pipeline li:nth-child(2)::before{animation-delay:.8s}.vertical-pipeline li:nth-child(3)::before{animation-delay:1.6s}@keyframes pipeline-packet{0%{transform:translate(-50%,0);opacity:0}15%{opacity:1}85%{opacity:1}100%{transform:translate(-50%,26px);opacity:0}}@media(prefers-reduced-motion:reduce){.vertical-pipeline li:not(:last-child)::before{animation:none;display:none}}</style><style id="original-vertical-flow">.rekodja-overview{padding:20px 12px}.rekodja-overview .flow-diagram-title{display:block;font-size:10px;line-height:1.8;letter-spacing:.02em;color:var(--gold-soft);margin:0 8px 22px}.rekodja-vertical-svg{display:block;width:100%;height:auto;overflow:visible}.rekodja-vertical-svg text{font-family:IBM Plex Mono,monospace}@media(prefers-reduced-motion:reduce){.rekodja-vertical-svg animateMotion{display:none}}</style><style>.rekodja-layout{grid-template-columns:minmax(0,1fr) 300px}@media(max-width:800px){.rekodja-layout{grid-template-columns:1fr}.rekodja-vertical-svg{max-width:340px;margin:auto}}</style><style id="overview-centred-position">.rekodja-overview{align-self:center}@media(max-width:800px){.rekodja-overview{align-self:start}}</style></head>
 <body>
 
   <!-- Top Reading Progress Indicator -->
@@ -1509,7 +1551,9 @@
   <!-- ========================================================================
        HERO : THE ECONOMETRICS MASTHEAD
        ======================================================================== -->
-  <header class="hero">
+  <a class="skip-link" href="#research">Skip to content</a>
+<nav class="site-nav" aria-label="Main navigation"><a class="nav-name" href="#top">AF<span> / Portfolio</span></a><div><a href="#research">Research</a><a href="#policy">Policy</a><a href="#projects">Projects</a><a href="#teaching">Teaching</a><a href="#leadership">Leadership</a></div><a class="nav-contact" href="mailto:aidilfarhanjas@gmail.com">Get in touch ↗</a></nav>
+<header class="hero" id="top">
     <!-- Interactive econometric background canvas (Supply-Demand on Left + Regression on Right) -->
     <canvas id="hero-canvas"></canvas>
     <div class="hero-accent-ring"></div>
@@ -1522,14 +1566,14 @@
       </div>
 
       <div class="hero-title-mask">
-        <h1>Aidil Farhan Bin Jasrie Arman Sany</h1>
+        <p class="hero-kicker">Economics · Research · Digital products</p><h1>Aidil Farhan<span class="full-name">Bin Jasrie Arman Sany</span></h1>
       </div>
 
-      <p class="tagline">
+      <div class="hero-intro-grid"><p class="tagline">
         Economics graduate turning raw housing and economic data into empirical research that shapes decisions, from peer-reviewed papers to <em>national housing policy</em>.
       </p>
 
-      <div class="contact-row">
+      <figure class="hero-portrait"><img src="./assets/hero-aidil.jpg" width="638" height="956" alt="Aidil speaking at a lectern during a student association event." fetchpriority="high"></figure></div><div class="hero-actions"><a class="primary-button" href="./Aidil_Farhan_Resume.pdf" target="_blank" rel="noopener">Download CV ↗</a><a class="secondary-button" href="#research">Explore my work ↓</a></div><div class="hero-context"><span>UKM Economics graduate</span><span>Econometrics &amp; Applied Statistics</span><span>Research experience at KRI</span></div><div class="contact-row">
         <a class="contact-item" href="https://mail.google.com/mail/?view=cm&fs=1&to=aidilfarhanjas@gmail.com" target="_blank" rel="noopener">
           <svg viewBox="0 0 24 24"><path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg>
           aidilfarhanjas@gmail.com
@@ -1553,14 +1597,112 @@
   <!-- ========================================================================
        SECTION 01: PROJECTS & REKODJA
        ======================================================================== -->
-  <section id="projects">
+  <section id="research">
     <div class="wrap">
       <div class="section-head reveal-on-scroll">
-        <h2>Projects</h2>
+        <h2>Research &amp; Publications</h2>
         <div class="count">01</div>
       </div>
       <p class="intro-line reveal-on-scroll stagger-1">
-        Applied software engineering built to resolve friction in real workflows, from client-side data scraping and OAuth synchronization to interactive economics teaching.
+        Peer-reviewed and institutional econometric investigations spanning household demography and urban residential housing markets.
+      </p>
+
+      <div class="research-layout"><div class="research-articles">
+      <!-- Publication 1: AIP -->
+      <div class="pub-card reveal-on-scroll stagger-2">
+        <div class="cover-wrap">
+          <img class="cover" src="./assets/aip-cover.jpg" alt="AIP Conference Proceedings cover">
+        </div>
+        <div class="pub-body">
+          <div class="venue-tag">AIP Conference Proceedings, 2026</div>
+          <h3>Family Planning Decisions and Child Investment Patterns: Evidence from Malaysian Families</h3>
+          <p>
+            This preliminary study used questionnaire data from Malaysian families and regression analysis to examine family size decisions and investment in children’s education, health and development. It found no statistically significant relationship between child quality and child quantity in the sample. Investment in child quality was associated with household income, health expenditure and family planning satisfaction, while child quantity was associated with parental age. Parents also identified financial stability, access to education and healthcare, and personal readiness as considerations in family size decisions. The findings highlight the importance of context-specific family policies.
+          </p>
+          <div class="tags" aria-label="Family planning article keywords"><span class="tag">Quality–Quantity Trade-off</span><span class="tag">RStudio</span><span class="tag">Microsoft Excel</span><span class="tag">Ordinary Least Squares (OLS)</span><span class="tag">Multiple Linear Regression</span><span class="tag">Human Capital Development</span></div>
+          <a class="action-link" href="https://pubs.aip.org/aip/acp/article-abstract/3493/1/040016/3404382/Family-planning-decisions-and-child-investment?redirectedFrom=PDF" target="_blank" rel="noopener">
+            Read published proceedings
+            <svg viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+          </a>
+        </div>
+      </div>
+
+      <!-- Publication 2: KRI Views -->
+      <div class="pub-card reveal-on-scroll stagger-3">
+        <div class="cover-wrap">
+          <img class="cover" src="./assets/kri-cover.jpg" alt="Khazanah Research Institute cover">
+        </div>
+        <div class="pub-body">
+          <div class="venue-tag">Khazanah Research Institute : Research Publication</div>
+          <h3>A Quick Look at the KL Residential Rental Affordability Market</h3>
+          <p>
+            Using salary and rental price data, this article examines whether renting in Kuala Lumpur is affordable, amid a housing supply trend towards condominiums and serviced apartments. Applying the Housing Cost Burden (HCB) benchmark of no more than 30% of household income spent on housing, it finds that an individual earning an average salary is likely to struggle to rent affordably. The article argues that housing policy should support affordable renting alongside home ownership, making both viable housing options.
+          </p>
+          <div class="tags" aria-label="Rental market article keywords"><span class="tag">Housing-Cost-Burden</span><span class="tag">Kuala Lumpur</span><span class="tag">Rental Market</span><span class="tag">RTA Advocate</span><span class="tag">Affordability</span><span class="tag">DOSM</span><span class="tag">NAPIC</span><span class="tag">Microsoft Excel</span><span class="tag">RStudio</span></div>
+          <a class="action-link" href="https://www.krinstitute.org/publications/a-quick-look-at-the-kl-residential-rental-affordability-market" target="_blank" rel="noopener">
+            Read the full article
+            <svg viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+          </a>
+        </div>
+      </div>
+      </div><aside class="research-carousel" aria-label="Research and fieldwork photographs"><button class="research-carousel-toggle" type="button" aria-pressed="false">Pause photos</button><div class="research-carousel-window"><div class="research-carousel-track"><div class="research-photo-set"><img src="./assets/leadership/archive-03.jpg" alt="Group visit to a housing area" width="260" height="195" loading="lazy"><img src="./assets/leadership/archive-07.jpg" alt="Visit to Razak Mansion" width="260" height="195" loading="lazy"><img src="./assets/leadership/archive-20.jpg" alt="Colleagues at Khazanah Research Institute" width="260" height="195" loading="lazy"><img src="./assets/leadership/archive-21.jpg" alt="Group at Khazanah Research Institute" width="260" height="195" loading="lazy"><img src="./assets/leadership/archive-04.jpg" alt="Housing site visit" width="260" height="195" loading="lazy"><img src="./assets/leadership/archive-22.jpg" alt="At Khazanah Research Institute" width="260" height="195" loading="lazy"></div><div class="research-photo-set" aria-hidden="true"><img src="./assets/leadership/archive-03.jpg" alt="Group visit to a housing area" width="260" height="195" loading="lazy"><img src="./assets/leadership/archive-07.jpg" alt="Visit to Razak Mansion" width="260" height="195" loading="lazy"><img src="./assets/leadership/archive-20.jpg" alt="Colleagues at Khazanah Research Institute" width="260" height="195" loading="lazy"><img src="./assets/leadership/archive-21.jpg" alt="Group at Khazanah Research Institute" width="260" height="195" loading="lazy"><img src="./assets/leadership/archive-04.jpg" alt="Housing site visit" width="260" height="195" loading="lazy"><img src="./assets/leadership/archive-22.jpg" alt="At Khazanah Research Institute" width="260" height="195" loading="lazy"></div></div></div></aside></div>
+    </div>
+  </section>
+<section id="policy">
+    <div class="wrap">
+      <div class="section-head reveal-on-scroll">
+        <h2>Policy Impact</h2>
+        <div class="count">02</div>
+      </div>
+      <p class="intro-line reveal-on-scroll stagger-1">
+        Contributing quantitative research and institutional analysis to national housing policy.
+      </p>
+
+      <div class="policy-card reveal-on-scroll stagger-2">
+        <div class="cover-wrap">
+          <img class="cover" src="./assets/drn-cover.jpg" alt="National Housing Policy DRN 2026-2035 booklet cover">
+        </div>
+        <div>
+          <div class="credit-tag">Credited Researcher : Khazanah Research Institute</div>
+          <h3>National Housing Policy (DRN) 2026-2035</h3>
+          <p>
+            Contributed as part of the core Khazanah Research Institute team to the National Housing Policy 2026-2035, a joint initiative by the Ministry of Housing and Local Government (KPKT), IIUM Consultancy &amp; Innovation Sdn Bhd (ICISB), and KRI.
+          </p>
+
+          <!-- Focus Area Highlights -->
+          <div class="focus-list">
+            <div class="focus-item">
+              <div class="label">CO-AUTHORED CHAPTER</div>
+              <div class="val">Owner Occupier &amp; Rental Market Dynamics</div>
+            </div>
+            <div class="focus-item">
+              <div class="label">AUTHORED INSTITUTIONAL STUDY</div>
+              <div class="val">DBKL Municipal Housing Delivery &amp; Tenancy Practices</div>
+            </div>
+          </div>
+
+          <p style="color: var(--ink-muted); font-size: 14.5px;">
+            The research highlighted severe rental market fragmentation, unprotected tenant rights, and the structural absence of a unified national rental database. This work contributed to research informing the policy's recommendations for the enactment of a Residential Tenancy Act and a real-time national rental monitoring framework.
+          </p>
+
+          <div style="margin-top: 20px;">
+            <a class="action-link" href="https://www.kpkt.gov.my/kpkt/modules_resources/bookshelf/BUKU_DRN_2026-2035_VERSI_BI/index.html" target="_blank" rel="noopener">
+              View official policy document (KPKT)
+              <svg viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+<section id="projects">
+    <div class="wrap">
+      <div class="section-head reveal-on-scroll">
+        <h2>Digital projects</h2>
+        <div class="count">03</div>
+      </div>
+      <p class="intro-line reveal-on-scroll stagger-1">
+        Digital products built with AI-assisted development to simplify job application tracking and make economics learning more interactive.
       </p>
 
       <div class="project-card reveal-on-scroll stagger-2">
@@ -1568,8 +1710,9 @@
           <h3>RekodJa : Automated Job Tracker</h3>
           <span class="project-badge">Chrome Extension &amp; Web App</span>
         </div>
-        <div class="role">Personal Engineering Project : Dual-Client Google Integration</div>
+        <div class="role">Independent project · Product requirements, AI-assisted development &amp; testing</div><div class="project-impact"><strong>101<span>extension installs</span></strong><p>As of 29 September 2026</p></div>
 
+        <div class="rekodja-layout"><div class="rekodja-main">
         <!-- Problem / Solution Structure -->
         <div class="problem-solution-grid">
           <div class="ps-block">
@@ -1583,112 +1726,19 @@
         </div>
 
         <!-- Motion Graphic: Animated Data Pipeline Diagram -->
-        <div class="flow-diagram-container">
-          <div class="flow-diagram-header">
-            <span class="flow-diagram-title">
-              <span class="live-node-pulse"></span>
-              REKODJA SYSTEM ARCHITECTURE &bull; LIVE DATA PIPELINE
-            </span>
-            <span class="mono" style="font-size: 11px; color: #8F98AE;">Zero-server client privacy</span>
-          </div>
-
-          <div class="pipeline-svg-wrap">
-            <!-- Desktop Layout (>= 641px) -->
-            <svg class="pipeline-svg-desktop" viewBox="0 0 600 90" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <!-- Connecting Paths -->
-              <path d="M120 45 L 230 45" stroke="rgba(217, 196, 143, 0.35)" stroke-width="2" stroke-dasharray="4 4" />
-              <path d="M350 45 L 460 25" stroke="rgba(217, 196, 143, 0.35)" stroke-width="2" stroke-dasharray="4 4" />
-              <path d="M350 45 L 460 65" stroke="rgba(217, 196, 143, 0.35)" stroke-width="2" stroke-dasharray="4 4" />
-
-              <!-- Animated Data Pulse Packets -->
-              <circle r="4" fill="#D9C48F">
-                <animateMotion path="M120 45 L 230 45" dur="2.4s" repeatCount="indefinite" />
-              </circle>
-              <circle r="4" fill="#D9C48F">
-                <animateMotion path="M350 45 L 460 25" dur="2.8s" begin="1.2s" repeatCount="indefinite" />
-              </circle>
-              <circle r="4" fill="#D9C48F">
-                <animateMotion path="M350 45 L 460 65" dur="2.8s" begin="1.2s" repeatCount="indefinite" />
-              </circle>
-
-              <!-- Node 1: Job Listing -->
-              <rect x="10" y="20" width="110" height="50" rx="3" fill="#16233F" stroke="rgba(217,196,143,0.5)" stroke-width="1.5"/>
-              <text x="65" y="42" fill="#F8F5ED" font-size="11" font-family="'IBM Plex Mono', monospace" text-anchor="middle" font-weight="500">Job Listing</text>
-              <text x="65" y="56" fill="#A9AEC0" font-size="9" font-family="'IBM Plex Mono', monospace" text-anchor="middle">DOM Target</text>
-
-              <!-- Node 2: Chrome Extension -->
-              <rect x="230" y="18" width="120" height="54" rx="3" fill="#223254" stroke="#D9C48F" stroke-width="1.8"/>
-              <text x="290" y="42" fill="#F8F5ED" font-size="11.5" font-family="'IBM Plex Mono', monospace" text-anchor="middle" font-weight="600">RekodJa Ext</text>
-              <text x="290" y="56" fill="#D9C48F" font-size="9" font-family="'IBM Plex Mono', monospace" text-anchor="middle">DOM Scraper</text>
-
-              <!-- Node 3: Google Sheets -->
-              <rect x="460" y="5" width="130" height="38" rx="3" fill="#16233F" stroke="rgba(217,196,143,0.4)" stroke-width="1.5"/>
-              <text x="525" y="24" fill="#F8F5ED" font-size="10.5" font-family="'IBM Plex Mono', monospace" text-anchor="middle">Google Sheets</text>
-              <text x="525" y="36" fill="#8F98AE" font-size="8.5" font-family="'IBM Plex Mono', monospace" text-anchor="middle">Direct User Cloud</text>
-
-              <!-- Node 4: Web App & DB -->
-              <rect x="460" y="48" width="130" height="38" rx="3" fill="#16233F" stroke="rgba(217,196,143,0.4)" stroke-width="1.5"/>
-              <text x="525" y="67" fill="#F8F5ED" font-size="10.5" font-family="'IBM Plex Mono', monospace" text-anchor="middle">RekodJa Web App</text>
-              <text x="525" y="79" fill="#8F98AE" font-size="8.5" font-family="'IBM Plex Mono', monospace" text-anchor="middle">Gmail Scan &amp; Analytics</text>
-            </svg>
-
-            <!-- Mobile Layout (<= 640px) -->
-            <svg class="pipeline-svg-mobile" viewBox="0 0 340 222" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <!-- Connecting Paths -->
-              <path d="M 170 52 L 170 86" stroke="rgba(217, 196, 143, 0.4)" stroke-width="2" stroke-dasharray="3 3" />
-              <path d="M 170 132 C 170 148, 86 148, 86 164" stroke="rgba(217, 196, 143, 0.4)" stroke-width="2" stroke-dasharray="3 3" />
-              <path d="M 170 132 C 170 148, 254 148, 254 164" stroke="rgba(217, 196, 143, 0.4)" stroke-width="2" stroke-dasharray="3 3" />
-
-              <!-- Animated Data Pulse Packets -->
-              <circle r="3.5" fill="#D9C48F">
-                <animateMotion path="M 170 52 L 170 86" dur="1.8s" repeatCount="indefinite" />
-              </circle>
-              <circle r="3.5" fill="#D9C48F">
-                <animateMotion path="M 170 132 C 170 148, 86 148, 86 164" dur="2.2s" begin="0.8s" repeatCount="indefinite" />
-              </circle>
-              <circle r="3.5" fill="#D9C48F">
-                <animateMotion path="M 170 132 C 170 148, 254 148, 254 164" dur="2.2s" begin="0.8s" repeatCount="indefinite" />
-              </circle>
-
-              <!-- Node 1: Job Listing -->
-              <rect x="95" y="10" width="150" height="42" rx="4" fill="#16233F" stroke="rgba(217,196,143,0.5)" stroke-width="1.5"/>
-              <text x="170" y="27" fill="#F8F5ED" font-size="11.5" font-family="'IBM Plex Mono', monospace" text-anchor="middle" font-weight="500">Job Listing</text>
-              <text x="170" y="42" fill="#A9AEC0" font-size="9.5" font-family="'IBM Plex Mono', monospace" text-anchor="middle">DOM Target</text>
-
-              <!-- Node 2: RekodJa Ext -->
-              <rect x="90" y="86" width="160" height="46" rx="4" fill="#223254" stroke="#D9C48F" stroke-width="1.8"/>
-              <text x="170" y="106" fill="#F8F5ED" font-size="12" font-family="'IBM Plex Mono', monospace" text-anchor="middle" font-weight="600">RekodJa Ext</text>
-              <text x="170" y="122" fill="#D9C48F" font-size="9.5" font-family="'IBM Plex Mono', monospace" text-anchor="middle">DOM Scraper</text>
-
-              <!-- Node 3: Google Sheets -->
-              <rect x="10" y="164" width="152" height="48" rx="4" fill="#16233F" stroke="rgba(217,196,143,0.4)" stroke-width="1.5"/>
-              <text x="86" y="184" fill="#F8F5ED" font-size="10.5" font-family="'IBM Plex Mono', monospace" text-anchor="middle" font-weight="500">Google Sheets</text>
-              <text x="86" y="199" fill="#8F98AE" font-size="8.5" font-family="'IBM Plex Mono', monospace" text-anchor="middle">Direct User Cloud</text>
-
-              <!-- Node 4: Web App & DB -->
-              <rect x="178" y="164" width="152" height="48" rx="4" fill="#16233F" stroke="rgba(217,196,143,0.4)" stroke-width="1.5"/>
-              <text x="254" y="184" fill="#F8F5ED" font-size="10.5" font-family="'IBM Plex Mono', monospace" text-anchor="middle" font-weight="500">RekodJa Web App</text>
-              <text x="254" y="199" fill="#8F98AE" font-size="8.5" font-family="'IBM Plex Mono', monospace" text-anchor="middle">Gmail &amp; Analytics</text>
-            </svg>
-          </div>
-        </div>
-
-        <!-- Architecture Tabs Navigation -->
-        <div class="arch-tabs-nav">
+<div class="arch-tabs-nav">
           <button class="arch-tab-btn is-active" data-tab="tab-ext">
             <span class="mono">01.</span> Chrome Extension
           </button>
           <button class="arch-tab-btn" data-tab="tab-web">
             <span class="mono">02.</span> Web App &amp; Analytics
           </button>
-        </div>
-
-        <!-- Tab Panel 1: Extension -->
+        </div>        <!-- Tab Panel 1: Extension -->
         <div id="tab-ext" class="arch-tab-panel is-active">
           <ul class="features-list">
             <li><strong>Automated DOM Parsing:</strong> Dynamically extracts role title, hiring company, date, and link directly from active job boards, eliminating manual data entry.</li>
             <li><strong>Direct Cloud Persistence:</strong> Authenticates via OAuth 2.0 to write rows straight into the candidate's personal Google Sheet.</li>
-            <li><strong>Privacy-First Architecture:</strong> Pure client-side data transmission with zero intermediate backend storage, ensuring zero hosting costs and full confidentiality.</li>
+            <li><strong>Privacy-First Architecture:</strong> The extension writes directly to your selected Google Sheet. The web app uses Supabase for application data and account features.</li>
           </ul>
         </div>
 
@@ -1696,8 +1746,8 @@
         <div id="tab-web" class="arch-tab-panel">
           <ul class="features-list">
             <li><strong>Session &amp; Dashboard Analytics:</strong> Secure Google OAuth session handling with visual breakdowns of application velocity, response rates, and interview pipeline stages.</li>
-            <li><strong>Bidirectional Synchronization:</strong> Reads existing applications directly from connected Google Sheets and allows live status updates with automatic two-way sync.</li>
-            <li><strong>Gmail Integration Engine:</strong> Scans user email threads to identify recruiter responses and application acknowledgments for one-click verification.</li>
+            <li><strong>Bidirectional Synchronization:</strong> Imports applications from a connected Google Sheet and writes stage changes back, with feedback when synchronization fails.</li>
+            <li><strong>Gmail Integration Engine:</strong> Optional read-only Gmail scans identify application emails and suggest or automatically apply eligible status updates.</li>
           </ul>
         </div>
 
@@ -1712,13 +1762,13 @@
         </div>
 
         <div class="note-box">
-          <strong style="color: var(--navy); font-family: 'IBM Plex Mono', monospace;">Etymology Note:</strong> 
+          <strong style="color: var(--navy); font-family: 'IBM Plex Mono', monospace;">Etymology Note:</strong>
           The title <em>RekodJa</em> combines the Northern Malaysian Kedah dialect expression <em>"rekod ja"</em> ("just record it") with <em>"Ja"</em> as short for <em>kerja</em> (employment / work).
         </div>
 
         <!-- Action Links -->
         <div class="card-actions">
-          <a class="action-link" href="http://rekodja.com/" target="_blank" rel="noopener">
+          <a class="action-link" href="https://rekodja.com/" target="_blank" rel="noopener">
             RekodJa Extension
             <svg viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
           </a>
@@ -1726,33 +1776,26 @@
             RekodJa Web App
             <svg viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
           </a>
-          <a class="action-link" href="https://gitdiagram.com/aidilfarhan/rekodja-extension" target="_blank" rel="noopener">
-            Extension Architecture Diagram
-            <svg viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
-          </a>
-          <a class="action-link" href="https://gitdiagram.com/aidilfarhan/rekodja-webapp" target="_blank" rel="noopener">
-            Web App Architecture Diagram
-            <svg viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
-          </a>
         </div>
+      </div><aside class="rekodja-overview" aria-label="RekodJa system overview"><div class="flow-diagram-title"><span class="live-node-pulse"></span> REKODJA SYSTEM ARCHITECTURE &bull; LIVE DATA PIPELINE</div><svg class="rekodja-vertical-svg" viewBox="0 0 340 550" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Job Listing flows to RekodJa Extension, then branches to Google Sheets and RekodJa Web App"><path d="M170 105 L170 195" stroke="#D9C48F" stroke-opacity=".45" stroke-width="2" stroke-dasharray="4 5"/><circle r="4" fill="#D9C48F"><animateMotion path="M170 105 L170 195" dur="2.4s" begin="0s" repeatCount="indefinite"/></circle><path d="M170 295 L170 355 L84 355 L84 430" stroke="#D9C48F" stroke-opacity=".45" stroke-width="2" stroke-dasharray="4 5"/><circle r="4" fill="#D9C48F"><animateMotion path="M170 295 L170 355 L84 355 L84 430" dur="2.8s" begin="1.2s" repeatCount="indefinite"/></circle><path d="M170 295 L170 355 L256 355 L256 430" stroke="#D9C48F" stroke-opacity=".45" stroke-width="2" stroke-dasharray="4 5"/><circle r="4" fill="#D9C48F"><animateMotion path="M170 295 L170 355 L256 355 L256 430" dur="2.8s" begin="1.2s" repeatCount="indefinite"/></circle><rect x="45" y="15" width="250" height="90" rx="4" fill="#16233F" stroke="#D9C48F" stroke-opacity="0.5" stroke-width="1.5"/><text x="170" y="55" fill="#F8F5ED" font-size="18" text-anchor="middle" font-weight="600">Job Listing</text><text x="170" y="80" fill="#A9AEC0" font-size="13" text-anchor="middle">DOM Target</text><rect x="45" y="195" width="250" height="100" rx="4" fill="#223254" stroke="#D9C48F" stroke-opacity="1" stroke-width="1.5"/><text x="170" y="235" fill="#F8F5ED" font-size="18" text-anchor="middle" font-weight="600">RekodJa Ext</text><text x="170" y="260" fill="#A9AEC0" font-size="13" text-anchor="middle">DOM Scraper</text><rect x="5" y="430" width="158" height="100" rx="4" fill="#16233F" stroke="#D9C48F" stroke-opacity="0.5" stroke-width="1.5"/><text x="84" y="470" fill="#F8F5ED" font-size="12.5" text-anchor="middle" font-weight="600">Google Sheets</text><text x="84" y="495" fill="#A9AEC0" font-size="10" text-anchor="middle">Direct User Cloud</text><rect x="177" y="430" width="158" height="100" rx="4" fill="#16233F" stroke="#D9C48F" stroke-opacity="0.5" stroke-width="1.5"/><text x="256" y="470" fill="#F8F5ED" font-size="12.5" text-anchor="middle" font-weight="600">RekodJa Web App</text><text x="256" y="495" fill="#A9AEC0" font-size="10" text-anchor="middle">Gmail &amp; Analytics</text></svg></aside></div>
       </div>
 
       <div class="project-card reveal-on-scroll stagger-2">
         <div class="card-header-flex">
-          <h3>Econ Tutor : SPM Economics Study Site</h3>
+          <h3>Econ Tutor : Interactive Economics Learning</h3>
           <span class="project-badge">Web App</span>
         </div>
-        <div class="role">Personal Engineering Project : Interactive KSSM Form 4 &amp; 5 Economics</div>
+        <div class="role">Independent project · Economics learning from SPM to undergraduate level</div><div class="project-impact"><strong>20<span>active users</span></strong><p>As of 30 September 2026</p></div>
 
         <!-- Problem / Solution Structure -->
         <div class="problem-solution-grid">
           <div class="ps-block">
             <h5>The Problem</h5>
-            <p>SPM Economics is graph-heavy, yet students learn from static textbook diagrams they never move, and practise from trial papers scattered across PDFs that give no feedback on a phone.</p>
+            <p>Economics learners, from SPM to undergraduate level, often work with static diagrams and learning materials scattered across textbooks and PDFs. These make it harder to explore how economic relationships change.</p>
           </div>
           <div class="ps-block">
             <h5>The Solution</h5>
-            <p>One sign-in site covering every Form 4 and Form 5 chapter: notes in textbook order, diagrams students drag to watch price and quantity respond, recall drills, calculators, and trial papers with schemes.</p>
+            <p>An interactive economics learning site for SPM, STPM, Matriculation and undergraduate-level learning, bringing together notes, draggable graphs and calculators, with flashcards, quizzes and trial-paper practice for SPM.</p>
           </div>
         </div>
 
@@ -1780,7 +1823,7 @@
               <p class="market-state" aria-live="polite"><strong id="market-state">Excess supply</strong><span lang="ms" id="market-state-ms">Lebihan penawaran</span></p>
               <p class="market-explain" id="market-explain">At RM 8.40, sellers offer 64 units but buyers want only 16. Unsold stock pushes the price down toward P*.</p>
             </div>
-            <button type="button" class="market-clear-btn" id="market-clear">Let the market clear</button>
+            <button type="button" class="market-clear-btn" id="market-clear">Let the market decides</button>
           </div>
         </div>
 
@@ -1818,118 +1861,18 @@
   </section>
 
   <!-- ========================================================================
-       SECTION 02: RESEARCH & PUBLICATIONS
-       ======================================================================== -->
-  <section id="research">
-    <div class="wrap">
-      <div class="section-head reveal-on-scroll">
-        <h2>Research &amp; Publications</h2>
-        <div class="count">02</div>
-      </div>
-      <p class="intro-line reveal-on-scroll stagger-1">
-        Peer-reviewed and institutional econometric investigations spanning household demography and urban residential housing markets.
-      </p>
-
-      <!-- Publication 1: AIP -->
-      <div class="pub-card reveal-on-scroll stagger-2">
-        <div class="cover-wrap">
-          <img class="cover" src="./assets/aip-cover.jpg" alt="AIP Conference Proceedings cover">
-        </div>
-        <div class="pub-body">
-          <div class="venue-tag">AIP Conference Proceedings, 2026</div>
-          <h3>Family Planning Decisions and Child Investment Patterns: Evidence from Malaysian Families</h3>
-          <p>
-            Undergraduate thesis research applying microeconometric estimation to investigate how household family planning choices systematically influence investment allocations toward child education and development using Malaysian family-level survey microdata.
-          </p>
-          <a class="action-link" href="https://pubs.aip.org/aip/acp/article-abstract/3493/1/040016/3404382/Family-planning-decisions-and-child-investment?redirectedFrom=PDF" target="_blank" rel="noopener">
-            Read published proceedings
-            <svg viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
-          </a>
-        </div>
-      </div>
-
-      <!-- Publication 2: KRI Views -->
-      <div class="pub-card reveal-on-scroll stagger-3">
-        <div class="cover-wrap">
-          <img class="cover" src="./assets/kri-cover.jpg" alt="Khazanah Research Institute cover">
-        </div>
-        <div class="pub-body">
-          <div class="venue-tag">Khazanah Research Institute : Research Publication</div>
-          <h3>A Quick Look at the KL Residential Rental Affordability Market</h3>
-          <p>
-            Published KRI research evaluating rental affordability thresholds across Kuala Lumpur. Utilized Department of Statistics Malaysia (DOSM) and National Property Information Centre (NAPIC) rental price datasets to quantify urban affordability gaps.
-          </p>
-          <a class="action-link" href="https://www.krinstitute.org/publications/a-quick-look-at-the-kl-residential-rental-affordability-market" target="_blank" rel="noopener">
-            Read the full article
-            <svg viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
-          </a>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ========================================================================
-       SECTION 03: POLICY IMPACT
-       ======================================================================== -->
-  <section id="policy">
-    <div class="wrap">
-      <div class="section-head reveal-on-scroll">
-        <h2>Policy Impact</h2>
-        <div class="count">03</div>
-      </div>
-      <p class="intro-line reveal-on-scroll stagger-1">
-        Translating quantitative housing analysis into national statutory reform and governmental frameworks.
-      </p>
-
-      <div class="policy-card reveal-on-scroll stagger-2">
-        <div class="cover-wrap">
-          <img class="cover" src="./assets/drn-cover.jpg" alt="National Housing Policy DRN 2026-2035 booklet cover">
-        </div>
-        <div>
-          <div class="credit-tag">Credited Researcher : Khazanah Research Institute</div>
-          <h3>National Housing Policy (DRN) 2026-2035</h3>
-          <p>
-            Contributed as part of the core Khazanah Research Institute team to the National Housing Policy 2026-2035, a joint initiative by the Ministry of Housing and Local Government (KPKT), IIUM Consultancy &amp; Innovation Sdn Bhd (ICISB), and KRI.
-          </p>
-
-          <!-- Focus Area Highlights -->
-          <div class="focus-list">
-            <div class="focus-item">
-              <div class="label">CO-AUTHORED CHAPTER</div>
-              <div class="val">Owner Occupier &amp; Rental Market Dynamics</div>
-            </div>
-            <div class="focus-item">
-              <div class="label">AUTHORED INSTITUTIONAL STUDY</div>
-              <div class="val">DBKL Municipal Housing Delivery &amp; Tenancy Practices</div>
-            </div>
-          </div>
-
-          <p style="color: var(--ink-muted); font-size: 14.5px;">
-            The research highlighted severe rental market fragmentation, unprotected tenant rights, and the structural absence of a unified national rental database. These findings directly underpinned the policy's formal recommendations for the enactment of a Residential Tenancy Act and a real-time national rental monitoring framework.
-          </p>
-
-          <div style="margin-top: 20px;">
-            <a class="action-link" href="https://www.kpkt.gov.my/kpkt/modules_resources/bookshelf/BUKU_DRN_2026-2035_VERSI_BI/index.html" target="_blank" rel="noopener">
-              View official policy document (KPKT)
-              <svg viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
-            </a>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ========================================================================
        SECTION 04: LEADERSHIP & SCROLL-TILTED 3D PHOTO GALLERY
        ======================================================================== -->
-  <section id="leadership">
+  <section id="tools" aria-label="Tools I work with"><div class="wrap"><div class="tools-logos"><span class="tool-logo" tabindex="0" aria-label="R / RStudio" title="R / RStudio"><img src="./assets/tools/r.svg" alt="R / RStudio" width="46" height="46" loading="lazy"><span class="tool-label">R / RStudio</span></span><span class="tool-logo" tabindex="0" aria-label="Microsoft Excel" title="Microsoft Excel"><img src="./assets/tools/microsoft-excel.svg" alt="Microsoft Excel" width="46" height="46" loading="lazy"><span class="tool-label">Microsoft Excel</span></span><span class="tool-logo" tabindex="0" aria-label="Codex" title="Codex"><img src="./assets/tools/codex_light.svg" alt="Codex" width="46" height="46" loading="lazy"><span class="tool-label">Codex</span></span><span class="tool-logo" tabindex="0" aria-label="Claude Code" title="Claude Code"><img src="./assets/tools/claude-ai-icon.svg" alt="Claude Code" width="46" height="46" loading="lazy"><span class="tool-label">Claude Code</span></span><span class="tool-logo" tabindex="0" aria-label="Google Antigravity" title="Google Antigravity"><img src="./assets/tools/antigravity.svg" alt="Google Antigravity" width="46" height="46" loading="lazy"><span class="tool-label">Google Antigravity</span></span><span class="tool-logo" tabindex="0" aria-label="GitHub" title="GitHub"><img src="./assets/tools/github_light.svg" alt="GitHub" width="46" height="46" loading="lazy"><span class="tool-label">GitHub</span></span><span class="tool-logo" tabindex="0" aria-label="Vercel" title="Vercel"><img src="./assets/tools/vercel.svg" alt="Vercel" width="46" height="46" loading="lazy"><span class="tool-label">Vercel</span></span><span class="tool-logo" tabindex="0" aria-label="Supabase" title="Supabase"><img src="./assets/tools/supabase.svg" alt="Supabase" width="46" height="46" loading="lazy"><span class="tool-label">Supabase</span></span></div></div></section>
+<section id="teaching"><div class="wrap"><div class="section-head"><h2>Teaching economics</h2><div class="count">04</div></div><div class="teaching-row"><div><p class="role">Private tutor · November 2024–present</p><h3>Making economics easier to understand.</h3><p>Targeted SPM coaching, contextual examples and structured learning materials. Econ Tutor grew from the same interest: helping students work through economics rather than memorise it.</p></div><div class="teaching-result"><strong>C → A</strong><p>One student's improvement from a trial-examination Grade C to Grade A through targeted coaching.</p></div></div><details class="testimonial"><summary>View parent testimonial ↗</summary><figure><img src="./assets/student-testimonial.png" alt="WhatsApp message from a parent thanking Cikgu Aidil for Economics tuition and confirming their child earned an A in the actual SPM examination." width="591" height="635" loading="lazy"><figcaption>Shared with permission. WhatsApp header and unrelated conversation cropped out.</figcaption></figure></details></div></section>
+<section id="leadership">
     <div class="wrap">
       <div class="section-head reveal-on-scroll">
         <h2>Leadership &amp; Organizational Impact</h2>
-        <div class="count">04</div>
+        <div class="count">05</div>
       </div>
       <p class="intro-line reveal-on-scroll stagger-1">
-        Directing faculty governance, operational restructuring, and stakeholder engagement across university student bodies.
+        Leading student association governance, programme coordination, and stakeholder engagement within the Faculty of Economics and Management at UKM.
       </p>
 
       <!-- Key Impact Metrics Banner -->
@@ -1952,7 +1895,7 @@
       <div class="leadership-card reveal-on-scroll stagger-3">
         <div class="role-title">President</div>
         <div class="role-org">Student Association of Faculty of Economics &amp; Management (FEP), UKM &bull; Oct 2023 &ndash; Jun 2024</div>
-        
+
         <p style="margin-bottom: 14px; font-size: 15px; color: var(--ink);">
           Led the strategic turnaround and comprehensive rebranding of the faculty student association, orchestrating committee divisions, external corporate ties, and institutional relations.
         </p>
@@ -1988,7 +1931,7 @@
       <div class="stream-control-bar reveal-on-scroll">
         <div class="stream-info">
           <span class="live-node-pulse"></span>
-          <span>PHOTO ARCHIVE (27)</span>
+          <span>PHOTO ARCHIVE (52)</span>
         </div>
         <div class="stream-actions">
           <button class="stream-btn is-active" id="stream-dir-ltr" title="Glide smoothly from Left to Right">
@@ -2783,18 +2726,43 @@
         { src: './assets/leadership/IMG_3103.JPG', alt: 'Bengkel Kepimpinan & Analisis Siswa' },
         { src: './assets/leadership/IMG_3105.jpg', alt: 'Aktiviti Persatuan Mahasiswa FEP' },
         { src: './assets/leadership/IMG_3117.JPG', alt: 'Sesi Townhall Pelajar Ekonomi' },
-        { src: './assets/leadership/IMG_3236.JPG', alt: 'Sidang Perwakilan Kolej Rahim Kajai' },
+        { src: './assets/leadership/IMG_3236.JPG', alt: 'Ucapan Yang Dipertua PMFEP pada Mesyuarat Agung Tahunan sesi 2023/2024' },
         { src: './assets/leadership/IMG_3239.JPG', alt: 'Pengurusan Pangkalan Data Alumni' },
         { src: './assets/leadership/IMG_3240.JPG', alt: 'Program Jalinan Alumni Universiti' },
         { src: './assets/leadership/IMG_4150.jpg', alt: 'Majlis Makan Malam Apresiasi' },
-        { src: './assets/leadership/IMG_4451.jpg', alt: 'Pelaksanaan Inisiatif Komuniti Siswa' },
+        { src: './assets/leadership/IMG_4451.jpg', alt: 'Kenangan bersama rakan dan trofi di acara sukan' },
         { src: './assets/leadership/IMG_6070.jpg', alt: 'Sesi Perbincangan Meja Bulat' },
         { src: './assets/leadership/IMG_6636.jpg', alt: 'Majlis Sambutan Mahasiswa Baharu' },
         { src: './assets/leadership/IMG_9113.JPG', alt: 'Pentas Penganugerahan UKM' },
         { src: './assets/leadership/55abdecf-4c7b-4c2c-9dd9-d8356df26caa.jpg', alt: 'Plak Anugerah Khas FEP' },
         { src: './assets/leadership/7bb1c087-8ff3-4598-acc0-8f034c207f28.jpg', alt: 'Sijil Pencapaian Tempat Ke-3 UKM' },
         { src: './assets/leadership/acc3c29b-7a16-44e4-aa3d-5950ff1001c0.jpg', alt: 'Kenangan Barisan Exco FEP' },
-        { src: './assets/leadership/be260ad6-7d52-4818-8b2a-86330c08e0d7.jpg', alt: 'Majlis Penutup Sesi Akademik' }
+        { src: './assets/leadership/be260ad6-7d52-4818-8b2a-86330c08e0d7.jpg', alt: 'Majlis Penutup Sesi Akademik' },
+        { src: './assets/leadership/tokoh-siswa-group.jpeg', alt: 'Gambar berkumpulan pada majlis Anugerah Tokoh Siswa UKM 2024' },
+        { src: './assets/leadership/watikah-pelantikan.jpeg', alt: 'Majlis watikah pelantikan kepimpinan pelajar UKM sesi 2024/2025' },
+        { src: './assets/leadership/archive-01.jpeg', alt: 'Kolaj kepimpinan pelajar PMFEP' },
+        { src: './assets/leadership/archive-02.jpg', alt: 'Penyerahan sijil' },
+        { src: './assets/leadership/archive-03.jpg', alt: 'Gambar berkumpulan semasa lawatan perumahan' },
+        { src: './assets/leadership/archive-04.jpg', alt: 'Lawatan ke kawasan perumahan' },
+        { src: './assets/leadership/archive-05.jpg', alt: 'Gambar berkumpulan di lokasi lawatan' },
+        { src: './assets/leadership/archive-06.jpg', alt: 'Gambar berkumpulan di kawasan kediaman' },
+        { src: './assets/leadership/archive-07.jpg', alt: 'Lawatan ke Razak Mansion' },
+        { src: './assets/leadership/archive-08.jpg', alt: 'Acara berkaitan perumahan' },
+        { src: './assets/leadership/archive-09.jpg', alt: 'Gambar berkumpulan di acara' },
+        { src: './assets/leadership/archive-10.jpg', alt: 'Sesi kerja di pejabat' },
+        { src: './assets/leadership/archive-11.jpg', alt: 'Perbincangan kerja bersama rakan' },
+        { src: './assets/leadership/archive-12.jpg', alt: 'Majlis anugerah kecemerlangan pelajar' },
+        { src: './assets/leadership/archive-13.jpg', alt: 'Kenangan majlis anugerah' },
+        { src: './assets/leadership/archive-14.jpg', alt: 'Potret graduasi' },
+        { src: './assets/leadership/archive-15.jpg', alt: 'Kenangan graduasi' },
+        { src: './assets/leadership/archive-16.jpg', alt: 'Potret semasa graduasi' },
+        { src: './assets/leadership/archive-17.jpg', alt: 'Sesi kerja dan perbincangan' },
+        { src: './assets/leadership/archive-18.jpg', alt: 'Bangunan di lokasi lawatan' },
+        { src: './assets/leadership/archive-19.jpg', alt: 'Sesi pembentangan' },
+        { src: './assets/leadership/archive-20.jpg', alt: 'Kenangan bersama rakan di Khazanah Research Institute' },
+        { src: './assets/leadership/archive-21.jpg', alt: 'Gambar berkumpulan di Khazanah Research Institute' },
+        { src: './assets/leadership/archive-22.jpg', alt: 'Kenangan di Khazanah Research Institute' },
+        { src: './assets/leadership/archive-23.jpg', alt: 'Kenangan bersama rakan' }
       ];
 
       // 4. Horizontal 3-Tier Photo Stream (Left to Right, Silky 60/120 FPS)
@@ -2878,9 +2846,10 @@
       }
 
       // Populate 3 Tiers (9 photos each = 27 total)
-      populateTierTrack(track1, 0, 9);
-      populateTierTrack(track2, 9, 18);
-      populateTierTrack(track3, 18, 27);
+      const tierSize = Math.ceil(images.length / 3);
+      populateTierTrack(track1, 0, tierSize);
+      populateTierTrack(track2, tierSize, tierSize * 2);
+      populateTierTrack(track3, tierSize * 2, images.length);
 
       // Stream Direction Controls
       const btnDirLTR = document.getElementById('stream-dir-ltr');
@@ -2986,5 +2955,5 @@
       }
     });
   </script>
-</body>
+<script>document.querySelectorAll('.research-carousel-toggle').forEach(button=>button.addEventListener('click',()=>{const paused=button.closest('.research-carousel').classList.toggle('is-paused');button.setAttribute('aria-pressed',String(paused));button.textContent=paused?'Play photos':'Pause photos';}));</script></body>
 </html>
